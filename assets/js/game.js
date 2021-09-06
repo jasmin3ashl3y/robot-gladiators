@@ -1,6 +1,7 @@
 var playerName = window.prompt("What is your robot's name?");
 var playerHealth = 100;
 var playerAttack = 10;
+var playerMoney = 10;
 
 // You can also log multiple values at once like this
 console.log(playerName, playerAttack, playerHealth);
@@ -11,12 +12,8 @@ var enemyAttack = 12;
 var playerMoney = 10;
 
 var enemyNames = ["Roborto", "Amy Android", "Robo Trumble"];
-
-console.log(enemyNames[0]);
-console.log(enemyNames[1]);
-console.log(enemyNames[2]);
-
-console.log(enemyNames.length);
+var enemyHealth = 50;
+var enemyAttack = 12;
 
 for(var i = 0; i < 3; i++) {
   console.log("apple");
@@ -83,12 +80,17 @@ if (promptFight === "fight" || promptFight === "FIGHT") {
     // subtract money from playerMoney for skipping
     playerMoney = playerMoney - 2;
   }
+  
   // if no (false), ask question again by running fight() again
   else {
     fight();
   }
 } else {
     window.alert("You need to choose a valid option. Try again!");
+  }
+
+  for(var i = 0; i < enemyNames.length; i++) {
+    fight(enemyNames[i]);
   }
 
 // fight();
